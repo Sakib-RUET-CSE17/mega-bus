@@ -158,13 +158,14 @@
         function showConfirmation() {
             const firstClassCount = getInputValue('firstClass')
             const economyClassCount = getInputValue('economyClass')
-            let message = 'First Class ($150) x ' + firstClassCount + ': ' + firstClassCount * 150 + '\n'
-            message += 'Economy ($100) x ' + economyClassCount + ': ' + economyClassCount * 100 + '\n'
-            message += '------------------------------------------\n'
-            message += 'Subtotal: ' + document.getElementById('total-price').innerText + '\n'
-            message += 'Charge 10% VAT: ' + document.getElementById('tax-amount').innerText + '\n'
-            message += '------------------------------------------\n'
-            message += 'Total: ' + document.getElementById('grand-total').innerText + '\n'
+            let message = `Ticket Information:
+            First Class ($150) x ${firstClassCount}: $${firstClassCount * 150}
+            Economy ($100) x ${economyClassCount}: $${economyClassCount * 100}
+            ------------------------------------------
+            Subtotal: ${document.getElementById('total-price').innerText}
+            Charge 10% VAT: ${document.getElementById('tax-amount').innerText}
+            ------------------------------------------
+            Total: ${document.getElementById('grand-total').innerText}`
             alert(message)
         }
     </script>
