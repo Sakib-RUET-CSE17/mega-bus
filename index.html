@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button onclick="showConfirmation()" class="btn-style">Book Now</button>
         </div>
     </main>
 
@@ -152,6 +152,20 @@
 
             const grandTotal = totalPrice + tax
             document.getElementById('grand-total').innerText = '$' + grandTotal
+        }
+
+        //Show Confirmation Alert
+        function showConfirmation() {
+            const firstClassCount = getInputValue('firstClass')
+            const economyClassCount = getInputValue('economyClass')
+            let message = 'First Class ($150) x ' + firstClassCount + ': ' + firstClassCount * 150 + '\n'
+            message += 'Economy ($100) x ' + economyClassCount + ': ' + economyClassCount * 100 + '\n'
+            message += '------------------------------------------\n'
+            message += 'Subtotal: ' + document.getElementById('total-price').innerText + '\n'
+            message += 'Charge 10% VAT: ' + document.getElementById('tax-amount').innerText + '\n'
+            message += '------------------------------------------\n'
+            message += 'Total: ' + document.getElementById('grand-total').innerText + '\n'
+            alert(message)
         }
     </script>
 </body>
